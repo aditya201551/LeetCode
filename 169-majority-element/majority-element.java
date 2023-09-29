@@ -1,3 +1,5 @@
+//Moore voting algorithm(https://www.geeksforgeeks.org/boyer-moore-majority-voting-algorithm/)
+
 class Solution {
     public int majorityElement(int[] nums) {
         int count=0, candidate=0;
