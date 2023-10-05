@@ -1,16 +1,24 @@
 class Solution {
     public int arraySign(int[] nums) {
         int result=0;
+        if(nums[0]==0)
+            return 0;
+        if(nums[0]<0)
+            result=-1;
+        else
+            result=1;
 
-        for(int i=0;i<nums.length;i++){
-            if(nums[i]==0)
-                return 0;
+        for(int i=1;i<nums.length;i++){
             
             if(nums[i]<0){
-                result++;
-            }
+                if(result<0)
+                    result=1;
+                else
+                    result=-1;
+            }else if(nums[i]==0)
+                return 0;
         }
 
-        return result%2==0?1:-1;
+        return result;
     }
 }
