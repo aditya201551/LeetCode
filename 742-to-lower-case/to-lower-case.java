@@ -6,7 +6,7 @@ class Solution {
             char ch=s.charAt(i);
 
             if(ch>='A' && ch<='Z'){
-                result+=Character.toString(ch+32);
+                result+=(char)(ch+32);
             }else{
                 result+=ch;
             }
