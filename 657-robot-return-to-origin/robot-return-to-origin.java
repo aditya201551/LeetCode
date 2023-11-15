@@ -3,8 +3,7 @@ class Solution {
         int upDown=0;
         int rightLeft=0;
 
-        for(int i=0;i<moves.length();i++){
-            char ch=moves.charAt(i);
+       for (char ch : moves.toCharArray() ){
             switch(ch){
                 case 'U':
                     upDown++;
