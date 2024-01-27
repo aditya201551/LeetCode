@@ -7,17 +7,17 @@ class Solution {
 
         int i = 0, j = s.length() - 1;
         while (i < j) {
-            char left = s.charAt(i);
-            char right = s.charAt(j);
+            // char left = s.charAt(i);
+            // char right = s.charAt(j);
 
-            if (!((left >= 97 && left <= 122) ||
-                    (left >= 48 && left <= 57))) {
+            if (!((s.charAt(i) >= 97 && s.charAt(i) <= 122) ||
+                    (s.charAt(i) >= 48 && s.charAt(i) <= 57))) {
                 i++;
-            } else if (!((right >= 97 && right <= 122) ||
-                    (right >= 48 && right <= 57))) {
+            } else if (!((s.charAt(j) >= 97 && s.charAt(j) <= 122) ||
+                    (s.charAt(j) >= 48 && s.charAt(j) <= 57))) {
                 j--;
             } else {
-                if (left != right) {
+                if (s.charAt(i) != s.charAt(j)) {
                     return false;
                 } else {
                     i++;
