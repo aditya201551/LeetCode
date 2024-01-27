@@ -7,8 +7,9 @@ class Solution {
 
         String res = "";
         while (col > 26) {
-            res = "" + arr[col % 26] + res;
-            if (col % 26 == 0) {
+            int digit=col%26;
+            res = "" + arr[digit] + res;
+            if (digit == 0) {
                 col = (col / 26) - 1;
             } else {
                 col /= 26;
