@@ -1,14 +1,33 @@
 class Solution {
     public boolean isPalindrome(String s) {
-        s=s.replaceAll("[\\W]|_","").toLowerCase();
-        // System.out.println(s);
-        if(s.equals("")) return true;
+        if (s.isEmpty())
+            return true;
 
-        int i=0;
-        int j=s.length()-1;
+        s = s.toLowerCase();
 
-        while(i<j){
-            if(s.charAt(i++)!=s.charAt(j--)) return false;
+        int i = 0, j = s.length() - 1;
+        while (i < j) {
+            char left = s.charAt(i);
+            char right = s.charAt(j);
+
+            if (!((left >= 97 && left <= 122) ||
+                    (left >= 48 && left <= 57))) {
+                i++;
+            } else if (!((right >= 97 && right <= 122) ||
+                    (right >= 48 && right <= 57))) {
+                j--;
+            } else {
+                if (left != right) {
+                    return false;
+                } else {
+                    i++;
+                    j--;
+                }
+            }
+        }
+
+        if (i == j && s.charAt(i) == s.charAt(j)) {
+            return true;
         }
 
         return true;
