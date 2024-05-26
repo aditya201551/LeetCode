@@ -3,9 +3,10 @@ class Solution {
         Set<Integer> set = new HashSet<>();
 
         for (int i : arr) {
+            if(set.contains(i))
+                return true;
             set.add(i);
         }
-        System.out.println(arr.length + " " + set.size());
-        return set.size() != arr.length;
+        return false;
     }
 }
