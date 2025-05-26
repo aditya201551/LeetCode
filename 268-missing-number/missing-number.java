@@ -1,15 +1,20 @@
 class Solution {
     public int missingNumber(int[] nums) {
-        int n=nums.length;
-        int sumN=(n*(n+1))/2;
-        int sumNum=0;
+        int[] arr=new int[nums.length+1];
 
-        for(int i=0;i<n;i++){
-            sumNum+=nums[i];
+        Arrays.fill(arr,-1);
+
+        for(int i=0;i<nums.length;i++){
+            arr[nums[i]]=nums[i];
         }
 
-        return sumN-sumNum;
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]==-1){
+                return i;
+            }
+        }
 
+        return 0;
 
     }
 }
